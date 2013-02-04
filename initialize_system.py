@@ -29,3 +29,9 @@ def config_git(email, name):
     subprocess.call("git config --global user.name " + name, shell=True)
 
 # config_git("ubergeek@jamesdressel.com", "'James Dressel'")
+def config_git_editor(editor):
+    #TODO: Code to verify editor is in quotes
+    subprocess.call('git config --global core.editor ' + editor, shell=True)
+
+
+#config_git_editor('"vim"')
