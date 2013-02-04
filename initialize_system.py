@@ -9,15 +9,17 @@ import struct
 print("stuff")
 subprocess.call(["ls","-l"])
 
-if((struct.calcsize("P") *8) is 32):
-    print "32 bit archetecture"
-#TODO: insert code to check if already installed    subprocess.call('cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -', shell = True)
-elif((struct.calcsize("P") * 8) is 64):
-    print "64 bit archetecture"
-#subprocess.call('~/.dropbox-dist/dropboxd', shell=True)
+def install_dropbox():
+    if((struct.calcsize("P") *8) is 32):
+    #TODO: insert code to check if already installed    
+    subprocess.call('cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -', shell = True)
+    elif((struct.calcsize("P") * 8) is 64):
+        subprocess.call('~/.dropbox-dist/dropboxd', shell=True)
 #todo determine if you can pass parameters to this.
 
 #download dropbox control script
+
+
 
 #TODO: set apt-name
 apt = "apt-get"
