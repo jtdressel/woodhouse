@@ -12,7 +12,7 @@ subprocess.call(["ls","-l"])
 def install_dropbox():
     if((struct.calcsize("P") *8) is 32):
     #TODO: insert code to check if already installed    
-    subprocess.call('cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -', shell = True)
+        subprocess.call('cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -', shell = True)
     elif((struct.calcsize("P") * 8) is 64):
         subprocess.call('~/.dropbox-dist/dropboxd', shell=True)
 #todo determine if you can pass parameters to this.
@@ -43,4 +43,4 @@ def config_gitignore(gitignore):
 
 #install_git()
 #config_git_editor('"vim"')
-config_gitignore("~Dropbox/config/.gitignore_global")
+config_gitignore("~/Dropbox/config/.gitignore_global")
