@@ -45,10 +45,16 @@ def set_ssh_config(config):
 
 def set_aliases(aliases):
     subprocess.call("ln -ifb " + aliases + " ~/.bash_aliases", shell=True)
+
+def set_profile(profile):
+    subprocess.call("ln -ifb " + profile + " ~/.profile", shell=True)
+
 #install_dropbox()
 #install_git()
 #config_git("ubergeek@jamesdressel.com", "'James Dressel'")
 #config_git_editor('"vim"')
 #config_gitignore("~/Dropbox/config/.gitignore_global")
 #set_ssh_config("~/Dropbox/config/ssh_config")
-set_aliases("~/Dropbox/config/.bash_aliases")
+#set_aliases("~/Dropbox/config/.bash_aliases")
+set_profile("~/Dropbox/config/.profile")
+
