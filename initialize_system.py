@@ -47,6 +47,7 @@ def set_aliases(aliases):
     subprocess.call("ln -ifb " + aliases + " ~/.bash_aliases", shell=True)
 #install_dropbox()
 #install_git()
+#config_git("ubergeek@jamesdressel.com", "'James Dressel'")
 #config_git_editor('"vim"')
 #config_gitignore("~/Dropbox/config/.gitignore_global")
 #set_ssh_config("~/Dropbox/config/ssh_config")
