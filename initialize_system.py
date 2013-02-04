@@ -45,7 +45,7 @@ def set_ssh_config(config):
 
 def set_aliases(aliases):
     subprocess.call("ln -ifb " + aliases + " ~/.bash_aliases", shell=True)
-
+#install_dropbox()
 #install_git()
 #config_git_editor('"vim"')
 #config_gitignore("~/Dropbox/config/.gitignore_global")
