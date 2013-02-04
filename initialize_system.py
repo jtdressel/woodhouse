@@ -41,7 +41,11 @@ def config_gitignore(gitignore):
 def set_ssh_config(config):
     subprocess.call("ln -ifb " + config + " ~/.ssh/config",shell=True)
 
+def set_aliases(aliases):
+    subprocess.call("ln -ifb " + aliases + " ~/.bash_aliases", shell=True)
+
 #install_git()
 #config_git_editor('"vim"')
 #config_gitignore("~/Dropbox/config/.gitignore_global")
-set_ssh_config("~/Dropbox/config/ssh_config")
+#set_ssh_config("~/Dropbox/config/ssh_config")
+set_aliases("~/Dropbox/config/.bash_aliases")
