@@ -1,3 +1,4 @@
+#!/usr/bin/python
 #Currently unstable. Don't use.
 
 #determine where config files are
