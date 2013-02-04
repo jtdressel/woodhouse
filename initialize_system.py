@@ -21,7 +21,9 @@ elif((struct.calcsize("P") * 8) is 64):
 
 #TODO: set apt-name
 apt = "apt-get"
-subprocess.call("sudo " + apt + " install git -y", shell=True)
+
+def install_git():
+    subprocess.call("sudo " + apt + " install git -y", shell=True)
 
 
 def config_git(email, name):
@@ -33,5 +35,5 @@ def config_git_editor(editor):
     #TODO: Code to verify editor is in quotes
     subprocess.call('git config --global core.editor ' + editor, shell=True)
 
-
+#install_git()
 #config_git_editor('"vim"')
