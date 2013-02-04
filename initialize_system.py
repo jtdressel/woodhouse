@@ -49,6 +49,9 @@ def set_aliases(aliases):
 def set_profile(profile):
     subprocess.call("ln -ifb " + profile + " ~/.profile", shell=True)
 
+def set_bashrc(bashrc):
+    subprocess.call("ln -ifb " + bashrc + " ~/.bashrc", shell=True)
+
 #install_dropbox()
 #install_git()
 #config_git("ubergeek@jamesdressel.com", "'James Dressel'")
@@ -56,5 +59,5 @@ def set_profile(profile):
 #config_gitignore("~/Dropbox/config/.gitignore_global")
 #set_ssh_config("~/Dropbox/config/ssh_config")
 #set_aliases("~/Dropbox/config/.bash_aliases")
-set_profile("~/Dropbox/config/.profile")
-
+#set_profile("~/Dropbox/config/.profile")
+set_bashrc("~/Dropbox/config/.bashrc")
