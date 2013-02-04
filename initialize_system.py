@@ -6,8 +6,6 @@ import struct
 
 #if dropbox is set up
 
-print("stuff")
-subprocess.call(["ls","-l"])
 
 def install_dropbox():
     if((struct.calcsize("P") *8) is 32):
@@ -40,7 +38,10 @@ def config_git_editor(editor):
 def config_gitignore(gitignore):
     subprocess.call('git config --global core.excludesfile ' + gitignore, shell=True)
 
+def set_ssh_config(config):
+    subprocess.call("ln -ifb " + config + " ~/.ssh/config",shell=True)
 
 #install_git()
 #config_git_editor('"vim"')
-config_gitignore("~/Dropbox/config/.gitignore_global")
+#config_gitignore("~/Dropbox/config/.gitignore_global")
+set_ssh_config("~/Dropbox/config/ssh_config")
