@@ -37,5 +37,10 @@ def config_git_editor(editor):
     #TODO: Code to verify editor is in quotes
     subprocess.call('git config --global core.editor ' + editor, shell=True)
 
+def config_gitignore(gitignore):
+    subprocess.call('git config --global core.excludesfile ' + gitignore, shell=True)
+
+
 #install_git()
 #config_git_editor('"vim"')
+config_gitignore("~Dropbox/config/.gitignore_global")
