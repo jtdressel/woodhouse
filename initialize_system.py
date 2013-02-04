@@ -1,3 +1,5 @@
+#Currently unstable. Don't use.
+
 #determine where config files are
 import subprocess
 import struct
