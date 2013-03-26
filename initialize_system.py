@@ -14,8 +14,9 @@ def install_dropbox():
     if((struct.calcsize("P") *8) is 32):
     #TODO: insert code to check if already installed    
         subprocess.call('cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -', shell = True)
+        subprocess.call('~/.dropbox-dist/dropboxd', shell=True)#TODO download management
     elif((struct.calcsize("P") * 8) is 64):
-        subprocess.call('~/.dropbox-dist/dropboxd', shell=True)
+        pass #TODO: 64bit
 #todo determine if you can pass parameters to this.
 
 #download dropbox control script
