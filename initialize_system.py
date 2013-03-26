@@ -54,12 +54,18 @@ def set_profile(profile):
 def set_bashrc(bashrc):
     subprocess.call("ln -ifb " + bashrc + " ~/.bashrc", shell=True)
 
-install_dropbox()
-install_git()
-config_git("ubergeek@jamesdressel.com", "'James Dressel'")
-config_git_editor('"vim"')
-config_gitignore("~/Dropbox/config/.gitignore_global")
-set_ssh_config("~/Dropbox/config/ssh_config")
-set_aliases("~/Dropbox/config/.bash_aliases")
-set_profile("~/Dropbox/config/.profile")
-set_bashrc("~/Dropbox/config/.bashrc")
+def part_a():
+    install_dropbox()
+    install_git()
+    config_git("ubergeek@jamesdressel.com", "'James Dressel'")
+    config_git_editor('"vim"')
+def part_b():
+    config_gitignore("~/Dropbox/config/.gitignore_global")
+    set_ssh_config("~/Dropbox/config/ssh_config")
+    set_aliases("~/Dropbox/config/.bash_aliases")
+    set_profile("~/Dropbox/config/.profile")
+    set_bashrc("~/Dropbox/config/.bashrc")
+
+part_a()
+#part_b()
+
