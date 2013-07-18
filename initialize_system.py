@@ -20,6 +20,13 @@ def install_dropbox():
         subprocess.call('cd ~ && wget -O - "https://www.dropbox.com/download/?plat=lnx.x86_64" | tar xzf -', shell = True)
         subprocess.call('~/.dropbox-dist/dropboxd', shell=True)
 #todo determine if you can pass parameters to this.
+    
+#install Dropbox CLI
+    subprocess.call('test -d ~/bin && echo "making bin" || echo "bin exists"', shell=True)
+    subprocess.call('wget -O ~/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"', shell=True)
+    subprocess.call('chmod +x ~/bin/dropbox.py', shell=True)
+#start dropbox
+    subprocess.call('~/bin/dropbox.py start', shell=True)
 
 #download dropbox control script
 
