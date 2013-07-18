@@ -4,6 +4,7 @@
 #determine where config files are
 import subprocess
 import struct
+import re
 #if needed install dropbox
 
 
@@ -36,8 +37,13 @@ def config_git(email, name):
 
 # config_git("ubergeek@jamesdressel.com", "'James Dressel'")
 def config_git_editor(editor):
-    #TODO: Code to verify editor is in quotes
-    subprocess.call('git config --global core.editor ' + editor, shell=True)
+    #TODO: test this code
+    p = re.compile(r'"(?!").+"$')
+    m = p.match(editor)
+    if(m):
+        subprocess.call('git config --global core.editor ' + editor, shell=True)
+    else:
+        subprocess.call('git config --global core.editor vim', shell=True)
 
 def config_gitignore(gitignore):
     subprocess.call('git config --global core.excludesfile ' + gitignore, shell=True)
