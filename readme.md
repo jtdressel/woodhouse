@@ -1,7 +1,7 @@
 # Woodhouse #
 Woodhouse is a collection of python scripts to do some housekeeping for *nix 
 systems. The basic premise is to keep config files in a Dropbox folder, and 
-use symlinks for config files.  
+create symlinks in your new system for config files that will update across all of your systems.  
 
 Currently Woodhouse is unstable.
 
