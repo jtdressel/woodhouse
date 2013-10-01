@@ -4,6 +4,7 @@
 #determine where config files are
 import subprocess
 import struct
+import re
 #if needed install dropbox
 
 
@@ -16,8 +17,16 @@ def install_dropbox():
         subprocess.call('cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -', shell = True)
         subprocess.call('~/.dropbox-dist/dropboxd', shell=True)#TODO download management
     elif((struct.calcsize("P") * 8) is 64):
-        pass #TODO: 64bit
+        subprocess.call('cd ~ && wget -O - "https://www.dropbox.com/download/?plat=lnx.x86_64" | tar xzf -', shell = True)
+        subprocess.call('~/.dropbox-dist/dropboxd', shell=True)
 #todo determine if you can pass parameters to this.
+    
+#install Dropbox CLI
+    subprocess.call('test -d ~/bin && echo "making bin" || echo "bin exists"', shell=True)
+    subprocess.call('wget -O ~/bin/dropbox.py "https://www.dropbox.com/download?dl=packages/dropbox.py"', shell=True)
+    subprocess.call('chmod +x ~/bin/dropbox.py', shell=True)
+#start dropbox
+    subprocess.call('~/bin/dropbox.py start', shell=True)
 
 #download dropbox control script
 
@@ -36,8 +45,13 @@ def config_git(email, name):
 
 # config_git("ubergeek@jamesdressel.com", "'James Dressel'")
 def config_git_editor(editor):
-    #TODO: Code to verify editor is in quotes
-    subprocess.call('git config --global core.editor ' + editor, shell=True)
+    #TODO: test this code
+    p = re.compile(r'"(?!").+"$')
+    m = p.match(editor)
+    if(m):
+        subprocess.call('git config --global core.editor ' + editor, shell=True)
+    else:
+        subprocess.call('git config --global core.editor vim', shell=True)
 
 def config_gitignore(gitignore):
     subprocess.call('git config --global core.excludesfile ' + gitignore, shell=True)
